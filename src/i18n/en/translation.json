@@ -154,117 +154,10 @@
       }
     },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected.",
-      "littleHelp": "A little help?",
-      "mainTeam": {
-        "title": "Main Team",
-        "description": "This list shows the main team members who are working hard to bring you the best browsing experience.",
-        "subTitle": {
-          "browser": "Browser",
-          "website": "Website and Branding"
-        },
-        "members": {
-          "browser": {
-            "mauro": {
-              "name": "Mauro V.",
-              "description": "Creator, Main Developer",
-              "link": "https://cheff.dev/"
-            },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "Active contributor and helps with MacOS builds",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "Huge contributor on theme functionalities",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "Site Reliability Engineer (SRE) and code signing.",
-              "link": false
-            },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "MacOS certificate and app notarization maintainer",
-              "link": false
-            },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "Active contributor with great contributions",
-              "link": "https://github.com/BrhmDev"
-            },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "Active contributor with split views / workspaces",
-              "link": "https://github.com/kristijanribaric"
-            },
-            "larvey": {
-              "name": "Larvey",
-              "description": "AUR maintainer",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "Big contributor with the gradient generator",
-              "link": "https://github.com/neurokitti"
-            }
-          },
-          "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "Core Website Architect, Spearheading Refactoring and Technical Enhancements",
-              "link": "https://github.com/taroj1205"
-            },
-            "jace": {
-              "name": "Jace",
-              "description": "Contributes to website design and branding",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "Active contributor, and very active in issue handling and website management",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "Branding and design",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "Active contributor and release notes writer",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "Documentation writer",
-              "link": "https://iamjafeth.com/"
-            }
-          }
-        }
-      },
-      "contributors": {
-        "title": "Contributors",
-        "description": "This list shows the contributors who have helped us to make Zen Browser the best it can be.",
-        "browser": "Browser",
-        "website": "Website"
-      }
-    },
-    "donate": {
-      "title": "Donate",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us.",
-      "patreon": {
-        "title": "Patreon",
-        "description": "Patreon allows you to support us with a monthly donation. You can choose the level of support that works best for you.",
-        "button": "Go to Patreon"
-      },
-      "koFi": {
-        "title": "Ko-fi",
-        "description": "Ko-fi allows you to support us with a one-time donation. You can choose the amount that works best for you. Monthly donations are also available.",
-        "button": "Go to Ko-fi"
+      "title": "About Wolf Assets",
+      "description": "We work on things that matter. Infrastructure, intelligence systems, and software for organizations navigating what comes next.",
+      "team": {
+        "title": "Leadership"
       }
     },
     "download": {
@@ -444,12 +337,8 @@
       "description": "Stay up to date with the latest changes to Zen! Since the first release till {latestVersion}, we've been working hard to make Zen the best it can be. Thanks everyone for your feedback! ❤️"
     },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected."
-    },
-    "donate": {
-      "title": "Donate - Zen",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us."
+      "title": "About - Wolf Assets",
+      "description": "Wolf Assets is an intelligence infrastructure company building the systems that power the next era."
     },
     "download": {
       "title": "Download - Zen",
@@ -474,7 +363,7 @@
       "download": "Download",
       "followUs": "Follow Us",
       "aboutUs": "About Us",
-      "teamAndContributors": "Team & Contributors",
+      "teamAndContributors": "Team",
       "privacyPolicy": "Privacy Policy",
       "getStarted": "Get Started",
       "documentation": "Documentation",
@@ -486,7 +375,7 @@
       "uptimeStatus": "Status",
       "reportAnIssue": "Contact Us",
       "twilight": "Beta",
-      "madeWith": "Made with <span aria-label='love'>❤️</span> by <a href='{link}' class='zen-link inline-block font-bold'>Arryan Bhatnagar</a>"
+      "madeWith": "Made with <span aria-label='love'>💜</span> by <a href='{link}' class='zen-link inline-block font-bold'>Arryan Bhatnagar</a>"
     },
     "nav": {
       "brand": "Wolf Assets",

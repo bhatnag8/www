@@ -16,9 +16,9 @@ const {
 
 <section
   id="community"
-  class="relative flex w-full flex-col items-center gap-6 py-12 text-start md:text-center lg:py-36"
+  class="relative flex w-full flex-col items-center gap-6 pt-4 pb-16 text-start md:text-center lg:pt-8 lg:pb-24"
 >
-  <h2 class="mb-2 text-4xl font-bold sm:text-6xl">
+  <h2 class="mb-8 text-4xl font-bold sm:text-6xl">
     {
       community.title.map(title =>
         title !== '\n' ? (
@@ -46,6 +46,8 @@ const {
         <li>Enterprise platforms</li>
         <li>Workflow automation</li>
         <li>B2B tooling</li>
+        <li>Supply chain orchestration</li>
+        <li>Industrial IoT systems</li>
       </ul>
     </div>
     <div
@@ -60,6 +62,7 @@ const {
         <li>Audio processing APIs</li>
         <li>Streaming infrastructure</li>
         <li>Creator tools</li>
+        <li>Rights management</li>
       </ul>
     </div>
     <div
@@ -74,6 +77,9 @@ const {
         <li>Distributed compute</li>
         <li>Zero-trust infrastructure</li>
         <li>Global edge network</li>
+        <li>Sovereign data hosting</li>
+        <li>Real-time replication</li>
+        <li>Compliance automation</li>
       </ul>
     </div>
     <div
@@ -88,45 +94,10 @@ const {
         <li>Foundation models</li>
         <li>Agentic systems</li>
         <li>Research & deployment</li>
+        <li>Inference optimization</li>
+        <li>Multi-modal reasoning</li>
       </ul>
     </div>
-  </div>
-
-  <!-- Contact Us Form -->
-  <div
-    class="community__button mt-12 w-full max-w-xl"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-  >
-    <h3 class="mb-6 text-2xl font-bold">Contact Us</h3>
-    <form class="flex flex-col gap-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-        class="placeholder:text-paper/50 rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-        class="placeholder:text-paper/50 rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
-      />
-      <textarea
-        name="message"
-        placeholder="Message"
-        rows="4"
-        required
-        class="placeholder:text-paper/50 resize-none rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
-      ></textarea>
-      <button
-        type="submit"
-        class="mt-2 rounded-full bg-coral px-6 py-3 text-lg font-medium text-paper transition-opacity hover:opacity-90"
-      >
-        Send Message
-      </button>
-    </form>
   </div>
 </section>
 

@@ -2,72 +2,44 @@
 const { class: className, ...props } = Astro.props
 
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faBluesky,
-  faGithub,
-  faMastodon,
-  faReddit,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { cn } from '~/utils/merge'
 
-library.add(faMastodon, faBluesky, faGithub, faXTwitter, faReddit)
-const Mastodon = icon({ prefix: 'fab', iconName: 'mastodon' })
-const Bluesky = icon({ prefix: 'fab', iconName: 'bluesky' })
+library.add(faGithub, faXTwitter, faLinkedinIn)
 const Github = icon({ prefix: 'fab', iconName: 'github' })
 const XTwitter = icon({ prefix: 'fab', iconName: 'x-twitter' })
-const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
+const LinkedIn = icon({ prefix: 'fab', iconName: 'linkedin-in' })
 ---
 
 <ul class={cn('flex items-center gap-4 opacity-80', className)} {...props}>
   <li>
     <a
-      href="https://github.com/zen-browser"
+      href="https://github.com/Wolf-Assets"
       target="_blank"
       class="font-bold"
-      aria-label="Visit Zen Browser on GitHub"
+      aria-label="Visit Wolf Assets on GitHub"
     >
       <Fragment set:html={Github.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://x.com/zen_browser"
+      href="https://x.com/WolfAssetsLLC"
       target="_blank"
       class="font-normal"
-      aria-label="Visit Zen Browser on X"
+      aria-label="Visit Wolf Assets on X"
     >
       <Fragment set:html={XTwitter.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://floss.social/@zenbrowser"
+      href="https://www.linkedin.com/company/wolf-assets/"
       target="_blank"
       class="font-normal"
-      aria-label="Visit Zen Browser on Mastodon"
+      aria-label="Visit Wolf Assets on LinkedIn"
     >
-      <Fragment set:html={Mastodon.html} />
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://bsky.app/profile/zen-browser.app"
-      target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Bluesky"
-    >
-      <Fragment set:html={Bluesky.html} />
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.reddit.com/r/zen_browser"
-      target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Reddit"
-    >
-      <Fragment set:html={Reddit.html} />
+      <Fragment set:html={LinkedIn.html} />
     </a>
   </li>
 </ul>

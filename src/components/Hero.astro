@@ -19,26 +19,27 @@ const {
 
 <header
   id="header"
-  class="flex w-full flex-col items-center gap-6 py-16 text-center lg:gap-12 lg:py-32"
+  class="flex w-full flex-col items-center gap-6 pb-4 pt-24 text-center lg:gap-12 lg:pb-8 lg:pt-32"
 >
   <div class="flex h-full flex-col items-center justify-center gap-6 md:gap-8">
     <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
       <div>
         <Title class="relative px-12 text-center text-5xl md:text-7xl lg:px-0 lg:text-9xl">
-          {
-            hero.title.map(title =>
-              title.text !== '\n' ? (
-                <b
-                  class:list={['font-normal', title.highlight && 'italic text-coral']}
-                  style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-                >
-                  {title.text}
-                </b>
-              ) : (
-                <br class="hidden md:block" />
-              )
-            )
-          }
+          <b
+            class="font-normal"
+            style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+          >
+            the future is{' '}
+          </b>
+          <br class="hidden md:block" />
+          <span
+            class="inline-block"
+            style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+          >
+            <b class="font-normal italic text-coral">inevitably </b><b
+              class="font-normal italic text-coral">agentic</b
+            >
+          </span>
         </Title>
         <p
           class="mt-6 px-12 text-center text-lg md:text-xl lg:px-0 lg:text-2xl"
@@ -86,7 +87,7 @@ const {
     const debug = false
 
     const elements = document.querySelectorAll(
-      '#header h1 b, #header p, #header div:has(a), #header video, #header ul'
+      '#header h1 b, #header h1 span, #header p, #header div:has(a), #header video, #header ul'
     )
 
     animate(elements, {
@@ -107,6 +108,8 @@ const {
         debug,
       }),
     })
+
   }
   initAnimations()
 </script>
+
