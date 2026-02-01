@@ -1,0 +1,155 @@
+---
+import FactoryIcon from '~/icons/FactoryIcon.astro'
+import MusicIcon from '~/icons/MusicIcon.astro'
+import CloudIcon from '~/icons/CloudIcon.astro'
+import BrainIcon from '~/icons/BrainIcon.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+const {
+  routes: {
+    index: { community },
+  },
+} = getUI(locale)
+---
+
+<section
+  id="community"
+  class="relative flex w-full flex-col items-center gap-6 py-12 text-start md:text-center lg:py-36"
+>
+  <h2 class="mb-2 text-4xl font-bold sm:text-6xl">
+    {
+      community.title.map(title =>
+        title !== '\n' ? (
+          <span style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
+            {title}
+          </span>
+        ) : (
+          <br class="hidden md:block" />
+        )
+      )
+    }
+  </h2>
+
+  <!-- Subsidiary Companies -->
+  <div class="grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div
+      class="community__button flex flex-col gap-3 text-left"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      <div class="flex items-center gap-3">
+        <FactoryIcon class="size-6 text-coral" />
+        <span class="text-xl font-medium">Cougar Industries</span>
+      </div>
+      <ul class="ml-9 list-disc space-y-1 text-base opacity-70">
+        <li>Enterprise platforms</li>
+        <li>Workflow automation</li>
+        <li>B2B tooling</li>
+      </ul>
+    </div>
+    <div
+      class="community__button flex flex-col gap-3 text-left"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      <div class="flex items-center gap-3">
+        <MusicIcon class="size-6 text-coral" />
+        <span class="text-xl font-medium">Slasher Records</span>
+      </div>
+      <ul class="ml-9 list-disc space-y-1 text-base opacity-70">
+        <li>Audio processing APIs</li>
+        <li>Streaming infrastructure</li>
+        <li>Creator tools</li>
+      </ul>
+    </div>
+    <div
+      class="community__button flex flex-col gap-3 text-left"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      <div class="flex items-center gap-3">
+        <CloudIcon class="size-6 text-coral" />
+        <span class="text-xl font-medium">Raptor Cloud</span>
+      </div>
+      <ul class="ml-9 list-disc space-y-1 text-base opacity-70">
+        <li>Distributed compute</li>
+        <li>Zero-trust infrastructure</li>
+        <li>Global edge network</li>
+      </ul>
+    </div>
+    <div
+      class="community__button flex flex-col gap-3 text-left"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      <div class="flex items-center gap-3">
+        <BrainIcon class="size-6 text-coral" />
+        <span class="text-xl font-medium">Wolf AI</span>
+      </div>
+      <ul class="ml-9 list-disc space-y-1 text-base opacity-70">
+        <li>Foundation models</li>
+        <li>Agentic systems</li>
+        <li>Research & deployment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact Us Form -->
+  <div
+    class="community__button mt-12 w-full max-w-xl"
+    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  >
+    <h3 class="mb-6 text-2xl font-bold">Contact Us</h3>
+    <form class="flex flex-col gap-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+        class="placeholder:text-paper/50 rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        class="placeholder:text-paper/50 rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
+      />
+      <textarea
+        name="message"
+        placeholder="Message"
+        rows="4"
+        required
+        class="placeholder:text-paper/50 resize-none rounded-lg border border-coral/30 bg-transparent px-4 py-3 text-paper focus:border-coral focus:outline-none"
+      ></textarea>
+      <button
+        type="submit"
+        class="mt-2 rounded-full bg-coral px-6 py-3 text-lg font-medium text-paper transition-opacity hover:opacity-90"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  import { animate, onScroll, stagger } from 'animejs'
+
+  function initAnimations() {
+    const debug = false
+
+    const elements = document.querySelectorAll('#community h2 span, #community .community__button')
+
+    animate(elements, {
+      opacity: { from: 0.001, to: 1 },
+      translateY: { from: 20, to: 0 },
+      filter: { from: 'blur(4px)', to: 'blur(0px)' },
+      duration: 300,
+      delay: stagger(150),
+      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
+      autoplay: onScroll({
+        target: '#community',
+        debug,
+      }),
+    })
+  }
+  initAnimations()
+</script>

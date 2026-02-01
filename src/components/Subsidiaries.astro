@@ -1,0 +1,116 @@
+---
+import FactoryIcon from '~/icons/FactoryIcon.astro'
+import MusicIcon from '~/icons/MusicIcon.astro'
+import CloudIcon from '~/icons/CloudIcon.astro'
+import BrainIcon from '~/icons/BrainIcon.astro'
+
+const subsidiaries = [
+  {
+    name: 'Cougar Industries',
+    description: 'hardware manufacturing & defense systems',
+    icon: FactoryIcon,
+  },
+  {
+    name: 'Slasher Records',
+    description: 'media production & entertainment',
+    icon: MusicIcon,
+  },
+  {
+    name: 'Wolf Cloud',
+    description: 'enterprise infrastructure & compute',
+    icon: CloudIcon,
+  },
+  {
+    name: 'Wolf AI',
+    description: 'machine intelligence & research',
+    icon: BrainIcon,
+  },
+]
+---
+
+<section id="subsidiaries" class="relative flex w-full flex-col items-center gap-8 py-12 lg:py-24">
+  <div class="flex flex-col items-center gap-4">
+    <h2
+      class="text-3xl font-bold sm:text-5xl"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      Our Portfolio
+    </h2>
+    <p
+      class="text-center text-base opacity-80"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      a vertically integrated ecosystem of specialized companies.
+    </p>
+  </div>
+
+  <!-- Company Structure Diagram -->
+  <div class="flex w-full flex-col items-center gap-8">
+    <!-- Wolf Assets Parent -->
+    <div
+      class="subsidiary__item flex items-center gap-3 rounded-xl border border-coral/30 bg-subtle px-6 py-4"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      <img src="/logo.png" alt="Wolf Assets" class="h-8 w-8 object-contain" />
+      <span class="text-xl font-bold">Wolf Assets</span>
+    </div>
+
+    <!-- Connecting Line -->
+    <div
+      class="h-12 w-px bg-coral/30"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+    </div>
+
+    <!-- Horizontal Line -->
+    <div
+      class="hidden h-px w-3/4 max-w-2xl bg-coral/30 lg:block"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+    </div>
+
+    <!-- Subsidiaries Grid -->
+    <div class="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        subsidiaries.map(sub => (
+          <div
+            class="subsidiary__item flex flex-col items-center gap-3 rounded-xl border border-subtle bg-muted p-6 text-center transition-all hover:border-coral/30 hover:bg-subtle"
+            style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+          >
+            <sub.icon class="size-8 text-coral" />
+            <div class="flex flex-col gap-1">
+              <span class="font-bold">{sub.name}</span>
+              <span class="text-xs opacity-70">{sub.description}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import { animate, onScroll, stagger } from 'animejs'
+
+  function initAnimations() {
+    const debug = false
+
+    const elements = document.querySelectorAll(
+      '#subsidiaries h2, #subsidiaries > div > p, #subsidiaries .subsidiary__item, #subsidiaries .h-12, #subsidiaries .h-px'
+    )
+
+    animate(elements, {
+      opacity: { from: 0.001, to: 1 },
+      translateY: { from: 20, to: 0 },
+      filter: { from: 'blur(4px)', to: 'blur(0px)' },
+      duration: 300,
+      delay: stagger(100),
+      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
+      autoplay: onScroll({
+        target: '#subsidiaries',
+        debug,
+      }),
+    })
+  }
+  initAnimations()
+</script>

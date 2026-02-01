@@ -1,0 +1,222 @@
+---
+const locations = [
+  { name: 'State College, PA', lat: 40.7934, lng: -77.86 },
+  { name: 'Abu Dhabi, UAE', lat: 24.4539, lng: 54.3773 },
+]
+---
+
+<section id="server-map" class="relative flex w-full flex-col items-center gap-8 py-12 lg:py-24">
+  <div class="flex flex-col items-center gap-4">
+    <h2
+      class="text-3xl font-bold sm:text-5xl"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      Global Infrastructure
+    </h2>
+    <p
+      class="text-center text-base opacity-80"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      distributed systems. worldwide reach.
+    </p>
+  </div>
+
+  <div
+    class="server-map__container relative w-full max-w-5xl"
+    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  >
+    <div class="relative aspect-[2/1] w-full overflow-hidden rounded-2xl border border-subtle">
+      <div
+        id="map"
+        class="h-full w-full"
+        style="filter: sepia(0.3) hue-rotate(120deg) saturate(0.8) brightness(0.9);"
+      >
+      </div>
+    </div>
+
+    <!-- Location labels -->
+    <div class="mt-6 flex flex-wrap justify-center gap-8">
+      {
+        locations.map(loc => (
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-coral" />
+            <span class="text-sm font-medium">{loc.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+
+<script>
+  import { animate, onScroll, stagger } from 'animejs'
+  import maplibregl from 'maplibre-gl'
+
+  function initMap() {
+    const locations = [
+      { name: 'State College, PA', lat: 40.7934, lng: -77.86 },
+      { name: 'Abu Dhabi, UAE', lat: 24.4539, lng: 54.3773 },
+    ]
+
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: {
+        version: 8,
+        sources: {
+          'carto-dark': {
+            type: 'raster',
+            tiles: [
+              'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+              'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+              'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+            ],
+            tileSize: 256,
+            attribution: '© CARTO',
+          },
+        },
+        layers: [
+          {
+            id: 'carto-dark-layer',
+            type: 'raster',
+            source: 'carto-dark',
+            minzoom: 0,
+            maxzoom: 22,
+          },
+        ],
+      },
+      center: [0, 30],
+      zoom: 1.5,
+      interactive: true,
+      attributionControl: false,
+    })
+
+    // Add markers
+    locations.forEach(loc => {
+      // Create marker element
+      const el = document.createElement('div')
+      el.className = 'map-marker'
+      el.innerHTML = `
+        <div class="marker-pulse"></div>
+        <div class="marker-dot"></div>
+      `
+
+      new maplibregl.Marker({ element: el }).setLngLat([loc.lng, loc.lat]).addTo(map)
+    })
+
+    // Draw arc line between locations
+    map.on('load', () => {
+      const start = [locations[0].lng, locations[0].lat]
+      const end = [locations[1].lng, locations[1].lat]
+
+      // Create arc points
+      const points = []
+      const numPoints = 100
+      for (let i = 0; i <= numPoints; i++) {
+        const t = i / numPoints
+        const lng = start[0] + (end[0] - start[0]) * t
+        const lat = start[1] + (end[1] - start[1]) * t
+        // Add arc height
+        const arcHeight = Math.sin(t * Math.PI) * 15
+        points.push([lng, lat + arcHeight])
+      }
+
+      map.addSource('route', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            type: 'LineString',
+            coordinates: points,
+          },
+        },
+      })
+
+      map.addLayer({
+        id: 'route',
+        type: 'line',
+        source: 'route',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round',
+        },
+        paint: {
+          'line-color': '#4d9281',
+          'line-width': 2,
+          'line-dasharray': [2, 2],
+        },
+      })
+    })
+  }
+
+  function initAnimations() {
+    const debug = false
+
+    const elements = document.querySelectorAll(
+      '#server-map h2, #server-map > div > p, #server-map .server-map__container'
+    )
+
+    animate(elements, {
+      opacity: { from: 0.001, to: 1 },
+      translateY: { from: 20, to: 0 },
+      filter: { from: 'blur(4px)', to: 'blur(0px)' },
+      duration: 300,
+      delay: stagger(150),
+      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
+      autoplay: onScroll({
+        target: '#server-map',
+        debug,
+      }),
+    })
+  }
+
+  initMap()
+  initAnimations()
+</script>
+
+<style is:global>
+  .map-marker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .marker-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #4d9281;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: #4d9281;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: pulse 2s ease-out infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+</style>

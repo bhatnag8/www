@@ -1,0 +1,451 @@
+---
+
+---
+
+<section
+  id="agentic-diagram"
+  class="relative flex w-full flex-col items-center gap-12 py-12 lg:py-24"
+>
+  <div class="flex flex-col items-center gap-4">
+    <h2
+      class="diagram__item text-3xl font-bold sm:text-5xl"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      Agentic Workflows Explained
+    </h2>
+    <p
+      class="diagram__item text-center text-base opacity-70"
+      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+    >
+      the core pieces in an agentic system explained for product teams
+    </p>
+  </div>
+
+  <!-- Automated Workflow -->
+  <div
+    class="diagram__item w-full max-w-4xl px-4"
+    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  >
+    <h3 class="mb-8 text-2xl font-semibold">Automated workflow</h3>
+
+    <div class="flex items-center justify-between gap-1 overflow-x-auto pb-4 sm:gap-2">
+      <div class="box box--input shrink-0">Input</div>
+      <svg class="hand-arrow shrink-0" viewBox="0 0 50 24" fill="none">
+        <path
+          d="M2 12 Q10 10, 20 12 T38 11"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+        <path
+          d="M32 6 Q36 10, 40 11 Q36 13, 33 17"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"></path>
+      </svg>
+      <div class="box box--step shrink-0">Step 1</div>
+      <svg class="hand-arrow shrink-0" viewBox="0 0 50 24" fill="none">
+        <path
+          d="M2 13 Q12 11, 22 13 T40 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+        <path
+          d="M33 7 Q38 11, 42 12 Q37 14, 34 18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"></path>
+      </svg>
+      <div class="box box--step shrink-0">Step 2</div>
+      <svg class="hand-arrow shrink-0" viewBox="0 0 50 24" fill="none">
+        <path
+          d="M3 11 Q14 13, 24 11 T39 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+        <path
+          d="M32 6 Q37 10, 41 12 Q36 14, 33 17"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"></path>
+      </svg>
+      <div class="box box--step shrink-0">Step 3</div>
+      <svg class="hand-arrow shrink-0" viewBox="0 0 50 24" fill="none">
+        <path
+          d="M2 12 Q11 10, 21 12 T39 11"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+        <path
+          d="M32 5 Q37 9, 41 11 Q36 13, 33 16"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"></path>
+      </svg>
+      <div class="box box--output shrink-0">Output</div>
+    </div>
+
+    <p class="mt-4 text-center text-sm italic opacity-50">
+      Deterministic - all workflows produce the same results
+    </p>
+  </div>
+
+  <!-- Agentic Workflow -->
+  <div
+    class="diagram__item w-full max-w-6xl px-4"
+    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  >
+    <h3 class="mb-8 text-2xl font-semibold">Agentic workflow</h3>
+
+    <div class="relative min-h-[520px] sm:min-h-[420px]">
+      <!-- Sticky Note: Top Right - Memory description -->
+      <div class="sticky-note sticky-note--yellow absolute right-4 top-0 sm:right-[10%] sm:top-0">
+        Short-term and long-term memory provides persistent context
+      </div>
+
+      <!-- Memory Bar -->
+      <div class="absolute left-1/2 top-20 w-[65%] -translate-x-1/2 sm:top-14">
+        <div class="box box--memory relative w-full py-4 text-center">
+          <span class="number">M</span>
+          Memory
+        </div>
+        <!-- Connector lines down to action boxes -->
+        <svg
+          class="absolute left-1/2 top-full h-8 w-4 -translate-x-1/2"
+          viewBox="0 0 16 32"
+          fill="none"
+        >
+          <path
+            d="M8 0 Q6 10, 8 16 Q10 22, 8 32"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity="0.4"></path>
+        </svg>
+      </div>
+
+      <!-- Main Flow Row -->
+      <div
+        class="absolute left-0 right-0 top-44 flex flex-wrap items-center justify-center gap-2 sm:top-36 sm:flex-nowrap sm:gap-1"
+      >
+        <!-- Input -->
+        <div class="relative">
+          <div class="box box--input">
+            <span class="number">1</span>
+            Input
+          </div>
+        </div>
+
+        <svg class="hand-arrow" viewBox="0 0 50 24" fill="none">
+          <path
+            d="M2 12 Q12 9, 22 12 T40 11"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+          <path
+            d="M33 6 Q38 10, 42 11 Q37 13, 34 17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"></path>
+        </svg>
+
+        <!-- Plan and decide -->
+        <div class="relative">
+          <div class="box box--action">
+            <span class="number">2</span>
+            Plan and decide
+          </div>
+        </div>
+
+        <svg class="hand-arrow" viewBox="0 0 50 24" fill="none">
+          <path
+            d="M3 13 Q13 10, 23 13 T41 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+          <path
+            d="M34 7 Q39 11, 43 12 Q38 14, 35 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"></path>
+        </svg>
+
+        <!-- Execute -->
+        <div class="relative">
+          <div class="box box--action">
+            <span class="number">3</span>
+            Execute actions
+          </div>
+        </div>
+
+        <svg class="hand-arrow" viewBox="0 0 50 24" fill="none">
+          <path
+            d="M2 11 Q12 14, 22 11 T40 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+          <path
+            d="M33 6 Q38 10, 42 12 Q37 14, 34 17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"></path>
+        </svg>
+
+        <!-- Reflect -->
+        <div class="relative">
+          <div class="box box--action">
+            <span class="number">4</span>
+            Reflect & correct
+          </div>
+        </div>
+
+        <svg class="hand-arrow" viewBox="0 0 50 24" fill="none">
+          <path
+            d="M3 12 Q13 10, 23 12 T41 11"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+          <path
+            d="M34 5 Q39 9, 43 11 Q38 13, 35 16"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"></path>
+        </svg>
+
+        <!-- Outcome -->
+        <div class="relative">
+          <div class="box box--output">
+            <span class="number">5</span>
+            Outcome
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Note: Left - Guardrails -->
+      <div class="sticky-note sticky-note--yellow absolute left-2 top-72 sm:left-[3%] sm:top-60">
+        Guardrails and human in the loop checks
+      </div>
+
+      <!-- Sticky Note: Left Bottom - Orchestration -->
+      <div
+        class="sticky-note sticky-note--gray absolute bottom-24 left-2 sm:bottom-20 sm:left-[3%]"
+      >
+        Orchestration frameworks<br />e.g. LangChain, AutoGen
+      </div>
+
+      <!-- Tool Registry -->
+      <div class="absolute bottom-36 left-1/2 -translate-x-1/2 sm:bottom-32">
+        <div class="box box--tool">
+          <span class="number">T</span>
+          Tool Registry
+        </div>
+        <!-- Connector line up -->
+        <svg
+          class="absolute bottom-full left-1/2 h-6 w-4 -translate-x-1/2"
+          viewBox="0 0 16 24"
+          fill="none"
+        >
+          <path
+            d="M8 24 Q6 16, 8 12 Q10 8, 8 0"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-dasharray="4 3"
+            opacity="0.4"></path>
+        </svg>
+      </div>
+
+      <!-- Sticky Note: Bottom Center - Tools description -->
+      <div
+        class="sticky-note sticky-note--gray absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-2"
+      >
+        External Tools and APIs available to the agents
+      </div>
+
+      <!-- Sticky Note: Right - Output description -->
+      <div class="sticky-note sticky-note--yellow absolute right-2 top-72 sm:right-[3%] sm:top-60">
+        Final output is produced as a coherent answer
+      </div>
+
+      <!-- Feedback Loop Arrow (hand-drawn curved) -->
+      <svg
+        class="absolute left-1/2 top-56 h-12 w-[55%] -translate-x-1/2 sm:top-48"
+        viewBox="0 0 400 50"
+        fill="none"
+      >
+        <path
+          d="M360 8 Q300 35, 200 40 Q100 35, 40 10"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-dasharray="8 5"
+          opacity="0.4"></path>
+        <path
+          d="M48 18 Q42 12, 38 8 Q44 10, 52 8"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"
+          opacity="0.4"></path>
+      </svg>
+    </div>
+
+    <p class="mt-4 text-center text-sm italic opacity-50">
+      Non-deterministic - system produces different results for the same input depending on other
+      factors
+    </p>
+  </div>
+</section>
+
+<style>
+  .box {
+    position: relative;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.375rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 640px) {
+    .box {
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .box--input,
+  .box--output {
+    background: rgba(240, 200, 140, 0.85);
+    border: 2px solid rgba(200, 160, 100, 0.8);
+    color: #333;
+  }
+
+  .box--step {
+    background: rgba(180, 210, 240, 0.85);
+    border: 2px solid rgba(140, 180, 220, 0.8);
+    color: #333;
+  }
+
+  .box--action {
+    background: rgba(180, 210, 240, 0.85);
+    border: 2px solid rgba(140, 180, 220, 0.8);
+    color: #333;
+  }
+
+  .box--memory {
+    background: rgba(240, 180, 180, 0.85);
+    border: 2px solid rgba(220, 150, 150, 0.8);
+    color: #333;
+  }
+
+  .box--tool {
+    background: rgba(190, 180, 230, 0.85);
+    border: 2px solid rgba(160, 150, 210, 0.8);
+    color: #333;
+  }
+
+  .number {
+    position: absolute;
+    top: -0.625rem;
+    left: -0.625rem;
+    width: 1.375rem;
+    height: 1.375rem;
+    background: #3a7a6a;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .hand-arrow {
+    width: 35px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 640px) {
+    .hand-arrow {
+      width: 45px;
+      height: 24px;
+    }
+  }
+
+  .sticky-note {
+    max-width: 120px;
+    padding: 0.5rem 0.625rem;
+    font-size: 0.6rem;
+    line-height: 1.35;
+    border-radius: 0.125rem;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    font-style: italic;
+  }
+
+  @media (min-width: 640px) {
+    .sticky-note {
+      max-width: 150px;
+      padding: 0.625rem 0.75rem;
+      font-size: 0.65rem;
+    }
+  }
+
+  .sticky-note--yellow {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+    color: #444;
+    transform: rotate(-2deg);
+  }
+
+  .sticky-note--gray {
+    background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+    color: #444;
+    transform: rotate(1.5deg);
+  }
+
+  .sticky-note:nth-child(3n) {
+    transform: rotate(-1deg);
+  }
+
+  .sticky-note:nth-child(3n + 1) {
+    transform: rotate(2deg);
+  }
+
+  .sticky-note:nth-child(3n + 2) {
+    transform: rotate(-2.5deg);
+  }
+</style>
+
+<script>
+  import { animate, onScroll, stagger } from 'animejs'
+
+  function initAnimations() {
+    const elements = document.querySelectorAll('#agentic-diagram .diagram__item')
+
+    animate(elements, {
+      opacity: { from: 0.001, to: 1 },
+      translateY: { from: 20, to: 0 },
+      filter: { from: 'blur(4px)', to: 'blur(0px)' },
+      duration: 300,
+      delay: stagger(150),
+      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
+      autoplay: onScroll({
+        target: '#agentic-diagram',
+      }),
+    })
+  }
+  initAnimations()
+</script>

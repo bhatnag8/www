@@ -1,0 +1,51 @@
+---
+import { Astronav, MenuItems } from 'astro-navbar'
+import Button from '~/components/Button.astro'
+import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
+import MenuIcon from '~/icons/MenuIcon.astro'
+import { getLocale, getPath, getUI } from '~/utils/i18n'
+import Logo from './Logo.astro'
+import MobileMenu from './MobileMenu.astro'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+const {
+  components: {
+    nav: { brand },
+  },
+} = getUI(locale)
+---
+
+<!-- Desktop Navigation -->
+<Astronav>
+  <MenuItems
+    class="container relative z-20 grid w-full grid-cols-2 items-center gap-2 bg-paper py-3 lg:grid lg:grid-cols-[auto_1fr_auto] lg:py-6"
+  >
+    <a class="flex items-center gap-2 text-xl font-bold" href={getLocalePath('/')}>
+      <Logo class="text-coral" />
+      <span>{brand}</span>
+    </a>
+    <div class="hidden items-center gap-6 place-self-center lg:flex">
+      <span class="text-lg font-medium lg:text-xl">2026 vision.</span>
+    </div>
+    <div class="flex items-center gap-2 place-self-end lg:gap-4">
+      <Button href="/admin" class="hidden lg:flex" isPrimary>
+        <span class="hidden items-center gap-2 lg:flex">
+          Admin Console
+          <ArrowRightIcon class="size-4" />
+        </span>
+      </Button>
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <label
+        for="mobile-menu-toggle"
+        class="cursor-pointer p-2 text-dark lg:hidden"
+        aria-label="Open menu"
+      >
+        <MenuIcon class="h-6 w-6" />
+      </label>
+    </div>
+  </MenuItems>
+</Astronav>
+
+<!-- Mobile Hamburger Menu Content -->
+<MobileMenu />
