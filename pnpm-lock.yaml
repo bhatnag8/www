@@ -90,7 +90,7 @@ importers:
         specifier: 1.11.13
         version: 1.11.13
       maplibre-gl:
-        specifier: ^5.17.0
+        specifier: 5.17.0
         version: 5.17.0
       postcss:
         specifier: 8.5.1
